@@ -8,26 +8,31 @@
     <link rel="stylesheet" href="node_modules/mocha/mocha.css" />
   </head>
   <body>
-    <main id="main">
-        <script id="recipe-form-template" type="text/x-handlebars-template">
+      <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
+      <script src="index.js"></script>
 
-            <form id="recipe-form" onsubmit="createRecipe(); return false;">
-                Description :<input type="text" id="description">
-                <br>
-                Name: <input type="text" id="name">
-                <br>
-                <input type="text"  name="ingredients">
-                <br>
-                <input type="text"  name="ingredients">
-                <br>
-                <input type="text"  name="ingredients">
-                <br>
-                <input type="text"  name="ingredients">
-                <br>
-                <input type="text"  name="ingredients">
-                <br>
-                <button type="submit">Submit</button>
-            </script>
+      <script id="recipe-form-template" type="text/x-handlebars-template">
+
+          <form id="recipe-form" onsubmit="createRecipe(); return false;">
+              Description :<input type="text" id="description">
+              <br>
+              Name: <input type="text" id="name">
+              <br>
+              <input type="text"  name="ingredients">
+              <br>
+              <input type="text"  name="ingredients">
+              <br>
+              <input type="text"  name="ingredients">
+              <br>
+              <input type="text"  name="ingredients">
+              <br>
+              <input type="text"  name="ingredients">
+              <br>
+              <button type="submit">Submit</button>
+          </form>
+      </script>
+    <main id="main">
+
 
     </main>
 
@@ -37,20 +42,19 @@
                 {{> recipeDetailsPartial }}
             <a onclick="displayEditForm();">Edit Recipe</a>
         </div>
-
     </script>
 
     <script id="recipe-details-partial" type="text/x-handlebars-template">
+
         <p>{{name}}</p>
         <ul>
             {{#each ingredients}}
-                <li>{{displayIngredient this}}</li>
+                <!-- <li>{{displayIngredient}}</li> -->
             {{/each}}
         </ul>
     </script>
 
-    <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
-    <script src="index.js"></script>
+
     <!-- Open this file and call `mocha.run()` in console to run tests -->
 
 

@@ -3,8 +3,8 @@ function init() {
 
   Handlebars.registerPartial('recipeDetailsPartial', document.getElementById('recipe-template').innerHTML);
 
-  handlebars.registerHelper('displayIngredient', function() {
-        return new Handlebars.SafeString("<strong>" + this.body + "</strong>")
+  Handlebars.registerHelper('displayIngredient', function() {
+        return new Handlebars.SafeString("<strong>" + this.body + "</strong>");
   });
 
 
@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 function createRecipe() {
+
 
     let recipeDescription = document.getElementById('description').value;
 
